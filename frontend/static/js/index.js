@@ -1,4 +1,5 @@
 import Dashboard from "./views/Dashboard.js";
+import Projects from "./views/Projects.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -10,7 +11,7 @@ const navigateTo = url => {
 const router = async () => {
     const routes = [
         { path: "/", view: Dashboard },
-        // { path: "/projects" , view: () => console.log("Viewing Contact")}, 
+        { path: "/projects" , view: Projects}, 
         // { path: "/contact" , view: () => console.log("Viewing Projects")}, 
     ];
 
@@ -30,6 +31,7 @@ const router = async () => {
         };
     }
 
+    console.log(potentialMatches);
     const view = new match.route.view();
     
     document.querySelector("#app").innerHTML = await view.getHtml();
