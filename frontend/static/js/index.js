@@ -23,7 +23,8 @@ const router = async () => {
         };
     });
 
-    let match = potentialMatches.find(potentialMatch => potentialMatch.isMatch); 
+    let match = potentialMatches.find(potentialMatch => potentialMatch.result !== null && potentialMatch.result === true);
+    console.log('matches found:', match);
     if (!match) {
         match = {
             route: routes[0],
@@ -33,6 +34,7 @@ const router = async () => {
 
     console.log(potentialMatches);
     const view = new match.route.view();
+    console.log(view.getHtml);
     
     document.querySelector("#app").innerHTML = await view.getHtml();
 };
