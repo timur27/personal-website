@@ -4,6 +4,7 @@ import OpenSource from "./views/OpenSource.js";
 import Portfolio from "./views/Portfolio.js";
 import TechStack from "./views/TechStack.js";
 import Contact from "./views/Contact.js";
+import BlogPostForm from "./views/BlogPostForm.js";
 
 const routes = [
     { path: "/", view: Home },
@@ -11,7 +12,8 @@ const routes = [
     { path: "/open-source", view: OpenSource },
     { path: "/portfolio" , view: Portfolio}, 
     { path: "/tech-stack" , view: TechStack}, 
-    { path: "/contact" , view: Contact}
+    { path: "/contact" , view: Contact},
+    { path: "/blog-post/add" , view: BlogPostForm}
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
