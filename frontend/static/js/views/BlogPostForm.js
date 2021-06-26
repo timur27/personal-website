@@ -1,5 +1,8 @@
 import AbstractView from "./AbstractView.js";
 
+const hardcoded_url =
+    "/static/html/blog-post-form.html";
+
 export default class extends AbstractView {
     constructor(params) {
         super(params);
@@ -7,21 +10,9 @@ export default class extends AbstractView {
     }
 
     async getHtml() { 
-        return `
-            <head>
-                <style>
-                input[type=text] {
-                    width: 50%;
-                    padding: 12px 20px;
-                    margin: 8px 0;
-                    box-sizing: border-box;
-                  }
-                </style>
-            </head>
-            <form>
-                <input type="text" id="blogPostTitle" name="blogPostTitle">
-                <br>
-                <input type="text" id="blogPostDesc" name="blogPostDesc">
-            </form>`
+        return fetch('/static/html/blog-post-form.html')
+                .then((res) => {
+                    return res.text();
+                });
     }
 }
