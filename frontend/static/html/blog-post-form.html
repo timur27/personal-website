@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        div.blogPostForm {
-            margin: auto;
-            width: 50%;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/blogpost.css">
 </head>
 <body>
-    <div class="blogPostForm">
-        <form>
+    <div class="blog-post" id="blog-post">
+        <form id="add-blog-post-form">
             <input type="text" id="blogPostTitle" name="blogPostTitle">
             <br>
             <input type="text" id="blogPostDesc" name="blogPostDesc">
+            <input type="submit" onclick="return abc();"/>
         </form>
     </div>
 </body>

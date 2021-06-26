@@ -13,6 +13,6 @@ export default class extends AbstractView {
         return fetch('/static/html/blog-post-form.html')
                 .then((res) => {
                     return res.text();
-                });
+                })
     }
 }
