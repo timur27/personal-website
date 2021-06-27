@@ -2,17 +2,10 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="/static/css/blogpost.css">
-    <script>
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = "console.log('hej hej');"
-        target.appendChild(script);
-        eval(console.log('hej hej'));
-    </script>
 </head>
 <body>
     <div class="blog-post" id="blog-post">
-        <form id="add-blog-post-form">
+        <form id="add-blog-post-form" onsubmit="return false">
             <input type="text" id="blogPostTitle" name="blogPostTitle">
             <br>
             <input type="text" id="blogPostDesc" name="blogPostDesc">

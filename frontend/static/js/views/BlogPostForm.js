@@ -1,6 +1,7 @@
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
+
     constructor(params) {
         super(params);
         this.setTitle("Add blog post");
@@ -12,10 +13,14 @@ export default class extends AbstractView {
                     return res.text(); 
                 })            
     };
-
+    
     async getJs() {
-        let blogPostScript = document.createElement("script");
-        blogPostScript.setAttribute("src", "/static/js/server/blogposts_read_model.js");
-        return blogPostScript; 
+        var scriptPath = '/static/js/server/blogposts_read_model.js';
+        if (document.querySelectorAll('[src="' + scriptPath + '"]').length === 0) {
+            let blogPostScript = document.createElement("script");
+            blogPostScript.setAttribute("src", scriptPath);
+            return blogPostScript; 
+        }
+        return "";
     }
 }
