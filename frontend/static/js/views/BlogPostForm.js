@@ -1,8 +1,5 @@
 import AbstractView from "./AbstractView.js";
 
-const hardcoded_url =
-    "/static/html/blog-post-form.html";
-
 export default class extends AbstractView {
     constructor(params) {
         super(params);
@@ -12,7 +9,13 @@ export default class extends AbstractView {
     async getHtml() { 
         return fetch('/static/html/blog-post-form.html')
                 .then((res) => {
-                    return res.text();
-                })
+                    return res.text(); 
+                })            
+    };
+
+    async getJs() {
+        let blogPostScript = document.createElement("script");
+        blogPostScript.setAttribute("src", "/static/js/server/blogposts_read_model.js");
+        return blogPostScript; 
     }
 }

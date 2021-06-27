@@ -56,5 +56,6 @@ const router = async () => {
     const view = new match.route.view();
 
     // Find the html in this object and ut it to document's inner html
-    document.querySelector("#content").innerHTML = await view.getHtml();
+    document.querySelector("#content").innerHTML = await view.getHtml(); 
+    document.head.appendChild(await view.getJs()); 
 };
