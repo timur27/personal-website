@@ -7,7 +7,7 @@
     <div class="header"> 
         <h1>Add a new Blog Post</h1>     
         <div class="blog-post" id="blog-post">
-            <form id="add-blog-post-form" onsubmit="return getAllPosts();">
+            <form id="add-blog-post-form" onsubmit="return false;">
                 <input type="text" id="blogPostTitle" name="blogPostTitle">
                 <br>
                 <textarea id="blogPostContent" name="blogPostContent" placeholder="Type something in :)"></textarea>
@@ -15,5 +15,6 @@
             </form>
         </div>
     </div>
+    <div id="posts"></div>
 </body>
 </html>

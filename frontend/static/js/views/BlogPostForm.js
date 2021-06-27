@@ -26,6 +26,7 @@ export default class extends AbstractView {
         if (document.querySelectorAll('[src="' + scriptPath + '"]').length === 0) {
             let blogPostScript = document.createElement("script");
             blogPostScript.setAttribute("src", scriptPath);
+            blogPostScript.setAttribute("type", "module");
             return blogPostScript; 
         }
     }
