@@ -57,5 +57,7 @@ const router = async () => {
 
     // Find the html in this object and ut it to document's inner html
     document.querySelector("#content").innerHTML = await view.getHtml(); 
-    document.head.appendChild(await view.getJs()); 
+    if (await view.getJs()) {
+        document.head.appendChild(await view.getJs()); 
+    }
 };
