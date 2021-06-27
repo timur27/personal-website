@@ -4,13 +4,16 @@
     <link rel="stylesheet" href="/static/css/blogpost.css">
 </head>
 <body>
-    <div class="blog-post" id="blog-post">
-        <form id="add-blog-post-form" onsubmit="return getAllPosts();">
-            <input type="text" id="blogPostTitle" name="blogPostTitle">
-            <br>
-            <input type="text" id="blogPostDesc" name="blogPostDesc">
-            <button type="submit">Submit form</button>
-        </form>
+    <div class="header"> 
+        <h1>Add a new Blog Post</h1>     
+        <div class="blog-post" id="blog-post">
+            <form id="add-blog-post-form" onsubmit="return getAllPosts();">
+                <input type="text" id="blogPostTitle" name="blogPostTitle">
+                <br>
+                <textarea id="blogPostContent" name="blogPostContent" placeholder="Type something in :)"></textarea>
+                <button class="button" type="submit">Add post</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
