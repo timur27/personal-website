@@ -13,16 +13,3 @@ import BlogPosts from "./../views/BlogPosts.js";
         
         addPost(title, desc); 
     });
-
-
-const addNewPost = async () => {
-        // !!! IMPROVE !!! 
-        // todo move this action into other layer
-        console.log('we are here'); 
-        document.querySelector("#posts").innerHTML = await new BlogPosts().getHtml(); 
-
-        var title = document.getElementById("blogPostTitle").value;
-        var desc = document.getElementById("blogPostContent").value;
-        
-        addPost(title, desc); 
-}
