@@ -1,10 +1,11 @@
 var posts = []; 
 
 
-function addPost(title, description) {
+export function addPost(title, description) {
     posts.push({postName: title, postDescription: description});
 }
 
-function getPosts() {
+export function getPosts() {
+    console.log('invoked');
     return posts; 
 }
