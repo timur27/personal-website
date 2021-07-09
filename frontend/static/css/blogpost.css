@@ -9,7 +9,7 @@ div.header {
     font-size: 15px;
 }
 
-/* --styling of the blog post title and content-- */
+/* --styles of the blog post title and content-- */
 /* todo try to "inherit" fields at some point  */
 #add-blog-post-form input[type=text]:not(#blogPostDesc) {
     width: 100%;
@@ -31,7 +31,7 @@ div.header {
     box-sizing: border-box;
     height: 100px;
 }
-/* --styling of the text input boxes-- */
+/* --styles of the blog post title and content-- */
 
 /* styles for buttons */
 .button {

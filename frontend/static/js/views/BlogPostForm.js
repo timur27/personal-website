@@ -4,7 +4,7 @@ export default class extends AbstractView {
 
     constructor(params) {
         super(params);
-        this.setTitle("Blog posts");
+        this.setTitle("Add blog posts");
     }
 
     async getHtml() { 
@@ -16,10 +16,9 @@ export default class extends AbstractView {
     
     async getJs() {
         var writeModelScript = '/static/js/posts/blogposts_write_model.js';
-        var readModelScript = '/static/js/posts/blogposts_read_model.js';
         var persistenceScript = '/static/js/posts/blogposts_persistence.js';
     
-        return [this.checkAndAddScript(writeModelScript), this.checkAndAddScript(persistenceScript), this.checkAndAddScript(readModelScript)];
+        return [this.checkAndAddScript(writeModelScript), this.checkAndAddScript(persistenceScript)];
     }
 
     checkAndAddScript(scriptPath) {
