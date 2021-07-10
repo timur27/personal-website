@@ -1,4 +1,5 @@
 import AbstractView from "./AbstractView.js";
+import { setupBlogPostsService } from "./BlogPostsService.js";
 
 export default class extends AbstractView {
     constructor(params) {
@@ -14,9 +15,7 @@ export default class extends AbstractView {
     };
     
     async getJs() {
-        var blogPostsService = '/static/js/views/BlogPostsService.js';
-    
-        return [this.checkAndAddScript(blogPostsService)];
+        setupBlogPostsService(); 
     }
 
     checkAndAddScript(scriptPath) {

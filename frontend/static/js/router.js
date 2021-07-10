@@ -57,11 +57,5 @@ const router = async () => {
 
     // Find the html in this object and it to document's inner html
     document.querySelector("#content").innerHTML = await view.getHtml(); 
-
-    // Find and add the js of the dynamically loaded html, if it's present
-    for (let script of await view.getJs()) {
-        if (script) {
-            document.head.appendChild(script);
-        }
-    }
+    await view.getJs(); 
 };
