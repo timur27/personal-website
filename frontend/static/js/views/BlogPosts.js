@@ -1,24 +1,22 @@
 import AbstractView from "./AbstractView.js";
 
 export default class extends AbstractView {
-
     constructor(params) {
         super(params);
         this.setTitle("Add blog posts");
     }
 
     async getHtml() { 
-        return fetch('/static/html/blog-post-form.html')
+        return fetch('/static/html/blog-posts.html')
                 .then((res) => {
                     return res.text(); 
                 })            
     };
     
     async getJs() {
-        var writeModelScript = '/static/js/posts/blogposts_write_model.js';
-        var persistenceScript = '/static/js/posts/blogposts_persistence.js';
+        var blogPostsService = '/static/js/views/BlogPostsService.js';
     
-        return [this.checkAndAddScript(writeModelScript), this.checkAndAddScript(persistenceScript)];
+        return [this.checkAndAddScript(blogPostsService)];
     }
 
     checkAndAddScript(scriptPath) {
