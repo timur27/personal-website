@@ -11,8 +11,37 @@ var blogPosts = [
     }
 ]
 
+var ID = function () {
+    // Math.random should be unique because of its seeding algorithm.
+    // Convert it to base 36 (numbers + letters), and grab the first 9 characters
+    // after the decimal.
+    return '_' + Math.random().toString(36).substr(2, 9);
+};
+
 var result = []; 
 result.posts = document.querySelector('.blogposts-items');
+document.onload = () => {
+    console.log('hey timka'); 
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log('haha'); 
+});
+
+document.getElementById("add-blog-post-form")
+    .addEventListener("submit", function(e){
+        var newTitle = document.getElementById("blogPostTitle").value;
+        var newContent = document.getElementById("blogPostContent").value;
+
+        let blogPost = {
+            id: ID(),
+            title: newTitle,
+            content: newContent
+        }
+        
+        blogPosts.push(blogPost); 
+        fetchPosts(); 
+    });
     
 var fetchPosts = () => {
     result.posts.innerHTML = ''; 

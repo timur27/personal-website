@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     router(); 
 })
 
-const navigateTo = url => {
+const navigateTo = url => { 
     history.pushState(null, null, url); 
     router(); 
 };

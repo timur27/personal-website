@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 <body>
-    <div class="blogposts">
+    <div class="blog-post" id="blog-post">
+        <form id="add-blog-post-form" onsubmit="return false;">
+            <input type="text" id="blogPostTitle" name="blogPostTitle">
+            <br>
+            <textarea id="blogPostContent" name="blogPostContent" placeholder="Type something in :)"></textarea>
+            <button class="button" type="submit">Add post</button>
+        </form>
+    </div>
+    <div class="blog-post-list">
         <ul class="blogposts-items">
 
         </ul>
     </div>
+    <script>
+        fetchPosts(); 
+    </script>
 </body>
 </html>
