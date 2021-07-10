@@ -1,17 +1,6 @@
 export var setupBlogPostsService = () => {
 
-    var blogPosts = [
-        {
-            id: 1, 
-            title: 'First blog post', 
-            content: 'First blog post content'
-        }, 
-        {
-            id: 2, 
-            title: 'First blog post', 
-            content: 'First blog post content'
-        }
-    ]
+    var blogPosts = [];
     
     var ID = function () {
         // Math.random should be unique because of its seeding algorithm.
